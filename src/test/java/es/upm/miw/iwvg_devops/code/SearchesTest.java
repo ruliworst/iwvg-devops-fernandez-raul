@@ -11,4 +11,11 @@ public class SearchesTest {
         List<String> expectedFamilyNames = List.of("Fernandez", "Blanco", "López", "Torres");
         assertEquals(expectedFamilyNames, result);
     }
+
+    @Test
+    public void testFindUserIdByAllProperFraction() {
+        List<String> result = new Searches().findUserIdByAllProperFraction().toList();
+        List<String> expectedUserIds = List.of("7");
+        assertEquals(expectedUserIds, result);
+    }
 }

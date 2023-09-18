@@ -11,4 +11,12 @@ public class Searches {
                 .map(User::getFamilyName)
                 .distinct();
     }
+
+    public Stream<String> findUserIdByAllProperFraction() {
+        return new UsersDatabase()
+                .findAll()
+                .filter(user -> user.getFractions().stream()
+                        .allMatch(Fraction::isProper))
+                .map(User::getId);
+    }
 }
