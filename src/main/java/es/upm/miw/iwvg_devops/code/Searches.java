@@ -29,4 +29,12 @@ public class Searches {
                         .reduce(Fraction::multiply))
                 .orElse(null);
     }
+
+    public Stream<Double> findDecimalFractionByNegativeSignFraction() {
+        return new UsersDatabase()
+                .findAll()
+                .flatMap(user -> user.getFractions().stream())
+                .filter(Fraction::isNegative)
+                .map(Fraction::decimal);
+    }
 }
