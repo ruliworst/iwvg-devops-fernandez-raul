@@ -18,4 +18,12 @@ public class SearchesTest {
         List<String> expectedUserIds = List.of("7");
         assertEquals(expectedUserIds, result);
     }
+
+    @Test
+    public void testFindFractionMultiplicationByUserFamilyName() {
+        Fraction result = new Searches().findFractionMultiplicationByUserFamilyName("Lozano");
+        Fraction expectedFraction = new Fraction(-1, 30);
+        assertEquals(expectedFraction.getNumerator(), result.getNumerator());
+        assertEquals(expectedFraction.getDenominator(), result.getDenominator());
+    }
 }
