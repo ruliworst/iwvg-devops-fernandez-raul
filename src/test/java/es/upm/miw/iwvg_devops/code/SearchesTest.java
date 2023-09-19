@@ -26,4 +26,11 @@ public class SearchesTest {
         assertEquals(expectedFraction.getNumerator(), result.getNumerator());
         assertEquals(expectedFraction.getDenominator(), result.getDenominator());
     }
+
+    @Test
+    public void testFindDecimalFractionByNegativeSignFraction() {
+        List<Double> result = new Searches().findDecimalFractionByNegativeSignFraction().toList();
+        List<Double> expectedDoubles = List.of(-0.2, -0.5, -0.0, -0.2);
+        assertEquals(expectedDoubles, result);
+    }
 }
